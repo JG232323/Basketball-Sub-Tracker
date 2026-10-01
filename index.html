@@ -64,12 +64,12 @@ select{font:inherit;border:2px solid var(--line);border-radius:10px;padding:10px
 .lbl{font-size:14px;color:var(--mute);margin:8px 0 6px}
 .pltxt{display:flex;gap:8px;align-items:flex-start;flex:1;text-align:left;background:none;color:var(--ink);padding:4px 0;min-height:36px;font-size:15px}
 .pltxt b{display:inline-block;min-width:78px}
-.pj{position:relative;background:var(--card);border:2px solid var(--line);border-radius:8px;margin-bottom:4px;overflow:hidden;display:flex;justify-content:space-between;padding:6px 10px;font-size:14px}
+.pj{position:relative;background:var(--card);border:2px solid var(--line);border-radius:8px;margin-bottom:4px;overflow:hidden;display:flex;justify-content:space-between;padding:6px 10px;font-size:14px[...]
 .pj i{position:absolute;left:0;top:0;bottom:0;background:var(--sel)}
 .pj span,.pj b{position:relative}
 .hurt{font-size:13px}
 .hurt.on{background:var(--ball);color:#fff}
-.sm{display:grid;grid-template-columns:1fr 54px 54px 62px;gap:4px;padding:6px 8px;background:var(--card);border:2px solid var(--line);border-radius:8px;margin-bottom:4px;font-size:14px;font-variant-numeric:tabular-nums}
+.sm{display:grid;grid-template-columns:1fr 54px 54px 62px;gap:4px;padding:6px 8px;background:var(--card);border:2px solid var(--line);border-radius:8px;margin-bottom:4px;font-size:14px;font-variant-nu[...]
 .sm.hd{background:none;border:0;color:var(--mute);font-size:13px}
 .sm span:nth-child(n+2){text-align:right}
 textarea{font:13px/1.3 ui-monospace,monospace;border:2px solid var(--line);border-radius:10px;padding:8px;background:var(--card);color:var(--ink);width:100%}
@@ -109,16 +109,16 @@ textarea{font:13px/1.3 ui-monospace,monospace;border:2px solid var(--line);borde
   <details open id="pjdet"><summary>Projected game time</summary><div id="pjbody" style="margin-top:8px"></div></details>
   <details id="pdet">
     <summary>Add planned sub</summary>
-    <div class="frm"><select id="pq" aria-label="Quarter"><option value="1">Q1</option><option value="2">Q2</option><option value="3">Q3</option><option value="4">Q4</option></select><input id="pt" value="5:00" inputmode="numeric" placeholder="Time left, e.g. 5:00" aria-label="Time left in quarter" style="flex:1"></div>
+    <div class="frm"><select id="pq" aria-label="Quarter"><option value="1">Q1</option><option value="2">Q2</option><option value="3">Q3</option><option value="4">Q4</option></select><input id="pt" va[...]
     <div class="lbl">Coming out</div><div id="fo"></div>
     <div class="lbl">Going in</div><div id="fi"></div>
-    <div class="frm"><button class="go" data-act="padd" id="padd">Add to plan</button><button class="clr" data-act="pcancel" id="pcancel" hidden>Cancel</button><span class="hint" id="pmsg" style="align-self:center"></span></div>
+    <div class="frm"><button class="go" data-act="padd" id="padd">Add to plan</button><button class="clr" data-act="pcancel" id="pcancel" hidden>Cancel</button><span class="hint" id="pmsg" style="alig[...]
   </details>
   <div class="add"><button class="clr" id="pclear" style="width:100%">Clear plan</button></div>
   <details id="bkdet"><summary>Backup and restore</summary>
     <p class="hint">Copy your roster, starting lineup and all plans as text and keep it in Notes. Paste it back here to restore.</p>
     <textarea id="bk" rows="5" aria-label="Backup text"></textarea>
-    <div class="frm" style="flex-wrap:wrap"><button class="go" id="bkcopy">Copy backup</button><button class="clr" id="bkrest">Restore from text</button><button class="clr" id="bkseed">Load built-in plan</button></div>
+    <div class="frm" style="flex-wrap:wrap"><button class="go" id="bkcopy">Copy backup</button><button class="clr" id="bkrest">Restore from text</button><button class="clr" id="bkseed">Load built-in p[...]
     <p class="hint" id="bkmsg"></p>
   </details>
 
@@ -130,7 +130,7 @@ textarea{font:13px/1.3 ui-monospace,monospace;border:2px solid var(--line);borde
 <script>
 var KEY='subtracker-v1';
 var QL=600000;
-var SEED={"v":1,"players":[{"id":"p1","name":"Amira","num":""},{"id":"p2","name":"Sanjna","num":""},{"id":"p3","name":"Ella B","num":""},{"id":"p4","name":"Amelia","num":""},{"id":"p5","name":"Sophie","num":""},{"id":"p6","name":"Amity","num":""},{"id":"p7","name":"Ella V-M","num":""},{"id":"p8","name":"Zoe","num":""},{"id":"p9","name":"Jewel","num":""},{"id":"p10","name":"Emily","num":""}],"starters":["p1","p2","p3","p4","p5"],"pid":"a","plans":[{"id":"a","name":"Plan A","items":[{"id":"s1","q":1,"t":400000,"out":["p1","p2","p3","p4","p5"],"inn":["p6","p7","p8","p9","p10"],"done":false},{"id":"s2","q":1,"t":200000,"out":["p9","p10"],"inn":["p4","p5"],"done":false},{"id":"s3","q":2,"t":600000,"out":["p7","p6","p4","p8","p5"],"inn":["p1","p2","p3","p9","p10"],"done":false},{"id":"s4","q":2,"t":400000,"out":["p1","p2","p3","p9","p10"],"inn":["p6","p7","p8","p4","p5"],"done":false},{"id":"s5","q":2,"t":200000,"out":["p6","p4","p5"],"inn":["p2","p1","p10"],"done":false},{"id":"s6","q":3,"t":600000,"out":["p7","p2","p1","p8","p10"],"inn":["p6","p3","p4","p9","p5"],"done":false},{"id":"s7","q":3,"t":400000,"out":["p6","p3","p9","p5"],"inn":["p7","p2","p8","p10"],"done":false},{"id":"s8","q":3,"t":200000,"out":["p7","p4","p10"],"inn":["p1","p3","p5"],"done":false},{"id":"s9","q":4,"t":600000,"out":["p1","p2","p8","p5"],"inn":["p6","p4","p9","p10"],"done":false},{"id":"s10","q":4,"t":400000,"out":["p6","p3","p4","p10"],"inn":["p7","p2","p1","p5"],"done":false},{"id":"s11","q":4,"t":200000,"out":["p7","p2","p5"],"inn":["p6","p3","p10"],"done":false}]}]};
+var SEED={"v":1,"players":[],"starters":[],"plans":[{"id":"plan-default","name":"Plan A","items":[]}],"pid":"plan-default"};
 var S={players:[],running:false,q:1,rem:QL,log:[],sel:[]};
 try{var raw=localStorage.getItem(KEY);if(raw){S=JSON.parse(raw);S.running=false;S.sel=[];}}catch(e){}
 if(typeof S.rem!=='number'){S.rem=QL;S.q=1;S.log=[];S.players.forEach(function(p){p.ms=0;p.on=false;});}
@@ -149,10 +149,10 @@ function find(id){return S.players.filter(function(p){return p.id===id;})[0];}
 function label(p){return (p.num?'#'+p.num+' ':'')+p.name;}
 
 function wrap(p,rm){
-  return '<div style="display:flex;gap:4px;align-items:center">'+row(p).replace('class="p','style="flex:1" class="p')+'<button class="rm hurt'+(p.inj?' on':'')+'" data-hurt="'+p.id+'" aria-label="Toggle injured for '+esc(p.name)+'">Hurt</button>'+(rm?'<button class="rm" data-rm="'+p.id+'" aria-label="Remove '+esc(p.name)+'">✕</button>':'')+'</div>';
+  return '<div style="display:flex;gap:4px;align-items:center">'+row(p).replace('class="p','style="flex:1" class="p')+'<button class="rm hurt'+(p.inj?' on':'')+'" data-hurt="'+p.id+'" aria-label="Toggle injury">'+(p.inj?'⚠':'')+'</button></div>';
 }
 function row(p){
-  return '<button class="p'+(S.sel.indexOf(p.id)>-1?' sel':'')+'" data-id="'+p.id+'"><span class="num">'+esc(p.num||'–')+'</span><span class="nm">'+esc(p.name)+(p.inj?' (injured)':'')+'</span><span class="min" data-min="'+p.id+'">'+fmt(p.ms)+'</span></button>';
+  return '<button class="p'+(S.sel.indexOf(p.id)>-1?' sel':'')+'" data-id="'+p.id+'"><span class="num">'+esc(p.num||'–')+'</span><span class="nm">'+esc(p.name)+(p.inj?' (injured)':'')+'</span><span class="min" data-min="'+p.id+'">'+fmt(p.ms||0)+'</span></button>';
 }
 
 function render(){
@@ -167,7 +167,7 @@ function render(){
   if(!sp.length)h=on.length<5&&off.length?'Select bench players to put on court, then confirm.':'Select any court and bench players, then confirm the sub.';
   document.getElementById('hint').innerHTML=h;
   var bar=document.getElementById('bar');bar.hidden=!sp.length;
-  var bm=!si.length?'Select bench players to come in.':on.length-so.length+si.length>5?'That would put '+(on.length-so.length+si.length)+' on court. Select more to come out.':(so.length?'Out: '+so.map(label).join(', ')+'. ':'')+'In: '+si.map(label).join(', ')+'.';
+  var bm=!si.length?'Select bench players to come in.':on.length-so.length+si.length>5?'That would put '+(on.length-so.length+si.length)+' on court. Select more to come out.':(so.length?'Out: '+so.map(function(x){return label(x);}).join(', '):'')+ (so.length&&si.length?'  ':'') + (si.length?'In: '+si.map(function(x){return label(x);}).join(', '):'');
   document.getElementById('bmsg').textContent=bm;
   document.getElementById('bsub').disabled=!okSub;
   renderPlan();renderStarters();renderSummary();renderBack();
@@ -230,7 +230,7 @@ function renderSummary(){
   var plan=S.snap||simulate().tot;
   var ps=S.players.filter(function(p){return p.ms>0||(plan[p.id]||0)>0;}).sort(function(a,b){return b.ms-a.ms;});
   document.getElementById('sum').innerHTML='<div class="sm hd"><span>Player</span><span>Plan</span><span>Actual</span><span>Diff</span></div>'+ps.map(function(p){
-    var pl=plan[p.id]||0,d=p.ms-pl,sg=d>=1000?'+':d<=-1000?'\u2212':'';
+    var pl=plan[p.id]||0,d=p.ms-pl,sg=d>=1000?'+':d<=-1000?'−':'';
     return '<div class="sm"><span>'+esc(label(p))+'</span><span>'+fmt(pl)+'</span><span>'+fmt(p.ms)+'</span><span class="'+(sg==='+'?'in':sg?'out':'')+'">'+(sg?sg+fmt(Math.abs(d)):'0:00')+'</span></div>';
   }).join('')+'<p class="hint">Plan is the minutes your sub plan gave each player when the game started.</p>';
 }
@@ -252,7 +252,7 @@ function renderBack(){
     if(p.on){p.back=false;return;}
     if(!ex[p.id])return;
     var offs=S.players.filter(function(q){return q.on&&!ex[q.id];});
-    h+='<div class="duebar"><span><b>Back</b><br>'+esc(label(p))+' should be on court now.'+(offs.length?'<br>Plan has '+esc(lab(offs))+' off.':'')+'</span><button class="go" data-act="pback" data-pid="'+p.id+'">Select</button></div>';
+    h+='<div class="duebar"><span><b>Back</b><br>'+esc(label(p))+' should be on court now.'+(offs.length?'<br>Plan has '+esc(lab(offs))+' off.':'')+'</span><button class="go" data-act="pback" data-pid="'+p.id+'">Back</button></div>';
   });
   if(h!==lastBack){lastBack=h;document.getElementById('back').innerHTML=h;}
 }
@@ -276,10 +276,10 @@ function renderPlan(){
   var pl=S.plan;renderPlanBar();renderProj();
   document.getElementById('pc').textContent=pl.length?pl.filter(function(x){return x.done;}).length+'/'+pl.length+' done':'';
   document.getElementById('plan').innerHTML=pl.length?pl.map(function(x){
-    return '<div class="pl'+(x.done||(passed(x)&&!live(x))?' done':'')+'"><button class="pltxt" data-act="pedit" data-pid="'+x.id+'"><b>Q'+x.q+' '+fmt(x.t)+'</b><span><span class="out">Out</span> '+esc(names(x.out,1))+'<br><span class="in">In</span> '+esc(names(x.inn,1))+'</span></button><button class="rm" data-act="pdel" data-pid="'+x.id+'" aria-label="Delete planned sub">✕</button></div>';
+    return '<div class="pl'+(x.done||(passed(x)&&!live(x))?' done':'')+'"><button class="pltxt" data-act="pedit" data-pid="'+x.id+'"><b>Q'+x.q+' '+fmt(x.t)+'</b><span><span class="out">Out</span> '+esc(lab(eff(x).o))+'<br><span class="in">In</span> '+esc(lab(eff(x).i))+'</span></button></div>';
   }).join(''):'<div class="empty">No planned subs. Add the ones you want for this game.</div>';
   var d=pl.filter(isDue)[0];shownDue=d?d.id:'';renderNext();
-  document.getElementById('due').innerHTML=d?'<div class="duebar"><span><b>Due now</b><br><span class="out">Out</span> '+esc(lab(eff(d).o))+'<br><span class="in">In</span> '+esc(lab(eff(d).i))+'</span><button class="go" data-act="papply" data-pid="'+d.id+'">Make sub</button><button class="clr" data-act="pskip" data-pid="'+d.id+'">Skip</button></div>':'';
+  document.getElementById('due').innerHTML=d?'<div class="duebar"><span><b>Due now</b><br><span class="out">Out</span> '+esc(lab(eff(d).o))+'<br><span class="in">In</span> '+esc(lab(eff(d).i))+'</span><button class="go" data-act="papply" data-pid="'+d.id+'">Apply</button></div>':'';
   var pt=parseT(document.getElementById('pt').value);
   var onSet=projected(+document.getElementById('pq').value,pt===null?0:pt);
   F.out=F.out.filter(function(id){return onSet[id];});
@@ -405,8 +405,8 @@ document.getElementById('bkcopy').onclick=function(){
 function applyBackup(d){
     S.players=d.players.map(function(p){return {id:String(p.id),name:String(p.name||''),num:String(p.num||''),on:false,ms:0};});
     S.starters=(d.starters||[]).map(String);
-    S.plans=d.plans.map(function(pl){return {id:String(pl.id),name:String(pl.name||'Plan'),items:(pl.items||[]).map(function(x){return {id:String(x.id),q:+x.q||1,t:+x.t||0,out:(x.out||[]).map(String),inn:(x.inn||[]).map(String),done:false};})};});
-    var a=S.plans.filter(function(x){return x.id===String(d.pid);})[0]||S.plans[0];S.pid=a.id;S.plan=a.items;
+    S.plans=(d.plans||[]).map(function(pl){return {id:String(pl.id),name:String(pl.name||'Plan'),items:(pl.items||[]).map(function(x){return {id:String(x.id),q:+x.q||1,t:+x.t||0,out:(x.out||[]).map(String),inn:(x.inn||[]).map(String),done:!!x.done};}),};});
+    var a=S.plans.filter(function(x){return x.id===String(d.pid);})[0]||S.plans[0];S.pid=a?id||a.id:a.id;S.plan=a.items;
     S.rem=QL;S.q=1;S.running=false;S.log=[];S.sel=[];S.snap=null;E=null;F={out:[],inn:[]};
     save();
 }
@@ -415,7 +415,7 @@ function applyBackup(d){
   function rs(){on=false;b.textContent='Load built-in plan';b.style.background='';b.style.color='';}
   b.onclick=function(){
     var m=document.getElementById('bkmsg');
-    if(!on){on=true;b.textContent='Tap again to replace everything';b.style.background='var(--ball)';b.style.color='#fff';m.textContent='This replaces your roster, lineup and plans with the built-in game plan.';t=setTimeout(rs,3000);return;}
+    if(!on){on=true;b.textContent='Tap again to replace everything';b.style.background='var(--ball)';b.style.color='#fff';m.textContent='This replaces your roster, lineup and plans with the built-in group.';t=setTimeout(rs,3000);return;}
     clearTimeout(t);rs();applyBackup(SEED);render();m.textContent='Built-in plan loaded.';
   };
 })();
@@ -455,7 +455,7 @@ document.addEventListener('click',function(e){
   }
   else if(b.dataset.act==='clr'){S.sel=[];render();}
   else if(b.dataset.hurt){var hp=find(b.dataset.hurt);if(hp){hp.inj=!hp.inj;hp.back=!hp.inj;save();render();}}
-  else if(b.dataset.rm){S.players=S.players.filter(function(p){return p.id!==b.dataset.rm;});var rid=b.dataset.rm;S.sel=S.sel.filter(function(x){return x!==rid;});F.out=F.out.filter(function(x){return x!==rid;});F.inn=F.inn.filter(function(x){return x!==rid;});S.plan.forEach(function(x){x.out=x.out.filter(function(y){return y!==rid;});x.inn=x.inn.filter(function(y){return y!==rid;});});S.plan=S.plan.filter(function(x){return x.out.length||x.inn.length;});S.starters=S.starters.filter(function(x){return x!==rid;});S.plans.forEach(function(pl){if(pl.id===S.pid)return;pl.items.forEach(function(x){x.out=x.out.filter(function(y){return y!==rid;});x.inn=x.inn.filter(function(y){return y!==rid;});});pl.items=pl.items.filter(function(x){return x.out.length||x.inn.length;});});save();render();}
+  else if(b.dataset.rm){S.players=S.players.filter(function(p){return p.id!==b.dataset.rm;});var rid=b.dataset.rm;S.sel=S.sel.filter(function(x){return x!==rid;});F.out=F.out.filter(function(x){return x!==rid;});F.inn=F.inn.filter(function(x){return x!==rid;});save();render();}
   else if(b.dataset.id){tap(b.dataset.id);}
 });
 document.getElementById('run').onclick=function(){
